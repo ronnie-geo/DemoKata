@@ -1,6 +1,7 @@
 package com.gildedrose;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 import com.gildedrose.constants.GildedRoseApplicationConstant;
 import com.gildedrose.itembuilder.Item;
@@ -21,15 +22,13 @@ public class GildedRoseApplicationRunner {
 
 		GildedRose gildRoseItems = new GildedRose(items);
 
-		for (int day = 0; day < 31; day++) {
+		IntStream.range(0, 31).forEach(day -> {
 		    System.out.printf("-------- Day %d --------%n", day);
 		    System.out.println("name, sellIn, quality");
-		    
-		    Arrays.stream(items).forEach(System.out::println); // Stream for concise iteration
-		    System.out.println();
-		    
-		    gildRoseItems.updateQuality(); // Update quality for all items
-		}
+		    Arrays.stream(items).forEach(System.out::println);
+		    System.out.println(); 
+		    gildRoseItems.updateQuality(); // Update all items
+		});
 
 	}
 }
