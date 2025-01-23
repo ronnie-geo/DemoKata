@@ -1,21 +1,14 @@
-package com.gildedrose;
+package com.gildedrose.itembuilder;
 
 public class ConjuredBuilder extends ItemBuilder {
-	
+
 	public ConjuredBuilder(Item item) {
 		super(item);
-		
 	}
 
 	@Override
 	public void update() {
-		item.sellIn --;
-		if(item.quality >0) {
-			item.quality -= 2;
-		if(item.sellIn <0) {
-			item.quality -= 2;
-		}
-		}
+		item.sellIn--;
+		item.quality = Math.max(0, item.quality - (item.sellIn < 0 ? 4 : 2));
 	}
-
 }

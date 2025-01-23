@@ -1,16 +1,18 @@
-package com.gildedrose;
+package com.gildedrose.itembuilder;
+
+import com.gildedrose.constants.GildedRoseApplicationConstant;
 
 public class ItemAdder {
 
 	public static ItemBuilder buildItem(Item item) {
         switch (item.name) {
-            case "Aged Brie":
+            case GildedRoseApplicationConstant.AGED_BRIE:
                 return new AgedBrieBuilder(item);
-            case "Backstage passes to a TAFKAL80ETC concert":
+            case GildedRoseApplicationConstant.BACKSTAGE:
                 return new BackstagePassesBuilder(item);
-            case "Sulfuras, Hand of Ragnaros":
+            case GildedRoseApplicationConstant.SULFURAS:
                 return new SulfurasBuilder(item);
-            case "Conjured Mana Cake":
+            case GildedRoseApplicationConstant.CONJURED:
             	return new ConjuredBuilder(item);
             default:
                 return new DefaultItemBuilder(item);

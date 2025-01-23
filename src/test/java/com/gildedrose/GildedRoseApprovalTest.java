@@ -10,6 +10,8 @@ import org.approvaltests.reporters.UseReporter;
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.Text;
 
+import com.gildedrose.itembuilder.Item;
+
 @UseReporter(DiffReporter.class)
 public class GildedRoseApprovalTest {
 
@@ -30,7 +32,7 @@ public class GildedRoseApprovalTest {
         System.setOut(new PrintStream(fakeoutput));
         System.setIn(new ByteArrayInputStream("a\n".getBytes()));
 
-        Program.main();
+        GildedRoseApplicationRunner.main();
         String output = fakeoutput.toString();
 
         Approvals.verify(output);
