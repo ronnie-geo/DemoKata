@@ -1,5 +1,10 @@
 package com.gildedrose.constants;
 
+/**
+ * This class defines a collection of constants representing the names of items in 
+ * the Gilded Rose inventory. These constants are used throughout the application 
+ * to identify specific item types.
+ */
 public class GildedRoseApplicationConstant {
 
 	public static final String AGED_BRIE = "Aged Brie";
