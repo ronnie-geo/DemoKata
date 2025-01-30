@@ -39,7 +39,7 @@ public class GildedRoseApplicationRunner {
 		    Arrays.stream(items).forEach(System.out::println);
 		    System.out.println(); 
 		    // Update the quality and sell-in values of all items
-		    gildRoseItems.updateQuality(); // Update all items
+		    gildRoseItems.updateQuality(items); // Update all items
 		});
 
 	}

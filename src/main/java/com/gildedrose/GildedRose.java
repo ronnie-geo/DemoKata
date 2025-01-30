@@ -1,8 +1,8 @@
 package com.gildedrose;
 
 import com.gildedrose.itembuilder.Item;
-import com.gildedrose.itembuilder.ItemAdder;
 import com.gildedrose.itembuilder.ItemBuilder;
+import com.gildedrose.itembuilder.ItemFactory;
 
 /**
  * This class manages and updates the quality and sell-in values of items in 
@@ -28,10 +28,12 @@ public class GildedRose {
      * This method iterates through each item, processes it 
      *  and updates it based on its rules.
      */
-    public void updateQuality() {
+    public void updateQuality(Item[] items) {
         for (Item item : items) {
-            ItemBuilder buildItem = ItemAdder.buildItem(item);
-            buildItem.update();
+        	//using ItemFactory design
+        	ItemBuilder builder = ItemFactory.getItemBuilderMap(item);
+        	builder.updateQuality(item);
+            
         }
     }
 }

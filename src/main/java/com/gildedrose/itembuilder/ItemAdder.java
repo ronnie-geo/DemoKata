@@ -17,15 +17,15 @@ public class ItemAdder {
 	public static ItemBuilder buildItem(Item item) {
         switch (item.name) {
             case GildedRoseApplicationConstant.AGED_BRIE:
-                return new AgedBrieBuilder(item);
+                return new AgedBrieBuilder();
             case GildedRoseApplicationConstant.BACKSTAGE:
-                return new BackstagePassesBuilder(item);
+                return new BackstagePassesBuilder();
             case GildedRoseApplicationConstant.SULFURAS:
-                return new SulfurasBuilder(item);
+                return new SulfurasBuilder();
             case GildedRoseApplicationConstant.CONJURED:
-            	return new ConjuredBuilder(item);
+            	return new ConjuredBuilder();
             default:
-                return new DefaultItemBuilder(item);
+                return new DefaultItemBuilder();
         }
     }
 
